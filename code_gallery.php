@@ -92,6 +92,8 @@ function cpm_gallery_updated_messages( $messages ) {
 	$post_type        = get_post_type( $post );
 	$post_type_object = get_post_type_object( $post_type );
 
+	if ( $post_type !== 'code_gallery' ) return $messages;
+
 	$messages['code_gallery'] = array(
 		0  => '', // Unused. Messages start at index 1.
 		1  => __( 'Gallery updated.', '_cp' ),
