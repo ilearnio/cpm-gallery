@@ -22,7 +22,7 @@ jQuery(document).ready(function($) {
             var selection = custom_uploader.state().get('selection');
             selection.map( function( attachment ) {
                 attachment = attachment.toJSON();
-                $('#upload_image').after("<input type='hidden' id='firstimage"+i+"' name='code_gallery_attachment[]' value="+attachment.url+" size='25'><div class='editthumb' id='imagediv"+i+"'><img src="+attachment.url+"><span class='removebtn'><a  onClick='removeImage("+i+")' id='removebutton"+i+"' class='glyphicon glyphicon-remove buttonremove' ></a></span></div>");
+                $('#upload_image').after("<div class='editthumb' id='imagediv"+i+"'><img src="+attachment.url+"><span class='removebtn'><a  onClick='removeImage("+i+")' id='removebutton"+i+"' class='glyphicon glyphicon-remove buttonremove' ></a></span><input type='hidden' id='firstimage"+i+"' name='code_gallery_attachment[]' value="+attachment.url+" size='25'></div>");
                 i++;        
                 ++j;
 
@@ -65,4 +65,7 @@ jQuery(document).ready(function($) {
         //Open the uploader dialog
         custom_uploader.open();
     }); 
+
+    $('#togglediv').sortable()
+      .disableSelection();
 });

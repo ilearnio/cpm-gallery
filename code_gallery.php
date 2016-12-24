@@ -194,9 +194,9 @@ function code_gallery_attachment() {
 
     	if($gallery_images[0]!= NULL){foreach ($gallery_images[0] as $key=>$value ) {
     	if($value != NULL){?>
-    	<input class="images" type="hidden" id="firstimage<?php echo $i?>" name="code_gallery_attachment[]"value="<?php echo $value;?>" />
     	<div class="editthumb" id="imagediv<?php echo $i;?>">
     		<img src="<?php echo $value;?>"><span class="removebtn"><a id="removebutton<?php echo $k++;?>" onClick="removeImage(<?php echo $i;?>)"class="glyphicon glyphicon-remove buttonremove" ></a></span>
+    		<input class="images" type="hidden" id="firstimage<?php echo $i?>" name="code_gallery_attachment[]"value="<?php echo $value;?>" />
     	</div>
 
 
